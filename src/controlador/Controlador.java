@@ -11,38 +11,33 @@ import vista.abuelo;
 
 
 public class Controlador implements ActionListener {
-    Cola col =new Cola();
+    Cola co=new Cola();
+    abuelo a=new abuelo();
     private Nodo nod;
-    abuelo abu = new abuelo();
-    DefaultTableModel modelo =new DefaultTableModel();
 
-    public Controlador(abuelo a) {
-        this.abu=a;
-        this.abu.txtenviar.addActionListener(this);
+    public Controlador(Cola co, abuelo a) {
+        this.a=a;
+        this.co=co;
+        this.a.btnenviar.addActionListener(this);
     }
     
-   
+     public void iniciar(){
+        a.setTitle("MCV PRUEBA");
+        a.setLocationRelativeTo(null);
+        
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==abu.txtenviar){
-            agregar();
-        }
-    
+      String d,nom,tr;
+       d=a.txtdpi.getText();
+       nom=a.txtnom.getText();
+       tr=a.txttransaccion.getText();
+       co.insertar(d, nom, tr);
+       a.txtsalida.setText(co.toString());
     }
   
-    public void agregar(){
-        
-        int d=Integer.parseInt(abu.txtdpi.getText());
-        String nom=abu.txtnom.getText();
-        String tr=abu.txttransaccion.getText();
-        nod.setDpi(d);
-        nod.setNombre(nom);
-        nod.setTransaccion(tr);
-        col.InsertarAlInicio(d, nom, tr);
-        
-        
-    }
-    
+   
     
     
     

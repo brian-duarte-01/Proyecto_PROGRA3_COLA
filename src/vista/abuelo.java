@@ -5,17 +5,14 @@
  */
 package vista;
 
+import modelo.Cola;
+
 /**
  *
  * @author Samsung
  */
 public class abuelo extends javax.swing.JFrame {
-    double num, ans;
-    int calcular;
-   public void suma(){
-      
-       
-   }
+    Cola co=new Cola();
     public abuelo() {
         initComponents();
     }
@@ -38,10 +35,12 @@ public class abuelo extends javax.swing.JFrame {
         txtcheque = new javax.swing.JButton();
         txtahorro = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        txtenviar = new javax.swing.JButton();
+        btnenviar = new javax.swing.JButton();
         txttransaccion = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         txtlimpiar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtsalida = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,8 +85,13 @@ public class abuelo extends javax.swing.JFrame {
             }
         });
 
-        txtenviar.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        txtenviar.setText("Enviar");
+        btnenviar.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        btnenviar.setText("Enviar");
+        btnenviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnenviarActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("Tipo de operacion:");
@@ -100,6 +104,10 @@ public class abuelo extends javax.swing.JFrame {
             }
         });
 
+        txtsalida.setColumns(20);
+        txtsalida.setRows(5);
+        jScrollPane1.setViewportView(txtsalida);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -109,6 +117,9 @@ public class abuelo extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(255, 255, 255)
                         .addComponent(txttransaccion, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(109, 109, 109)
+                        .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(58, 58, 58)
                         .addComponent(txtdeposito, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -132,18 +143,14 @@ public class abuelo extends javax.swing.JFrame {
                                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(txtnom)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(109, 109, 109)
-                        .addComponent(jLabel1)))
-                .addContainerGap(104, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jButton4))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(191, 191, 191)
-                        .addComponent(txtenviar, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(43, 224, Short.MAX_VALUE))
+                        .addComponent(btnenviar, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,10 +165,13 @@ public class abuelo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtdpi, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtnom, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addComponent(txttransaccion, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(txttransaccion, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel1))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtahorro, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -169,7 +179,7 @@ public class abuelo extends javax.swing.JFrame {
                     .addComponent(txtdeposito, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtlimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                .addComponent(txtenviar)
+                .addComponent(btnenviar)
                 .addGap(14, 14, 14)
                 .addComponent(jButton4)
                 .addContainerGap())
@@ -207,6 +217,15 @@ public class abuelo extends javax.swing.JFrame {
        txttransaccion.setText("");
     }//GEN-LAST:event_txtlimpiarActionPerformed
 
+    private void btnenviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnenviarActionPerformed
+       String d,nom,tr;
+       d=txtdpi.getText();
+       nom=txtnom.getText();
+       tr=txttransaccion.getText();
+       co.insertar(d, nom, tr);
+       txtsalida.setText(co.toString());
+    }//GEN-LAST:event_btnenviarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -243,18 +262,20 @@ public class abuelo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnenviar;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JButton txtahorro;
     public javax.swing.JButton txtcheque;
     public javax.swing.JButton txtdeposito;
     public javax.swing.JTextField txtdpi;
-    public javax.swing.JButton txtenviar;
     public javax.swing.JButton txtlimpiar;
     public javax.swing.JTextField txtnom;
+    public javax.swing.JTextArea txtsalida;
     public javax.swing.JTextField txttransaccion;
     // End of variables declaration//GEN-END:variables
 }

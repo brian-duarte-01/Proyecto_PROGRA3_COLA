@@ -1,54 +1,56 @@
-
 package modelo;
 
 public class Cola {
-   Nodo frente;
-    Nodo fin;
-    int tama;
-    //constructor
-    public Cola() 
-    {
-        frente = null;
-        fin = null;
+
+    private Nodo primero;
+    private Nodo ultimo;
+
+    public Cola() {
+        primero = null;
+        ultimo = null;
     }
-    
-    //metodo insertar al inicio en cola lineal
-    public Cola InsertarAlInicio( int d, String nom, String tr) 
-    {
+
+    public boolean colaVacia() {
+        return primero == null;
+
+    }
+
+    public void insertar(String d, String nom, String tr) {
         Nodo nuevo;
-        nuevo = new Nodo(d,nom,tr,frente);
-        nuevo.enlace = frente;
-        frente = nuevo;
-        return this;
-    }
-    
-    //metodo insertar al final en cola lineal
-    public void InsertarNodoAlFinal(int d, String nom, String tr) {
-        Nodo indice;
-
-        if (frente == null) {
-            Nodo nuevo;
-            nuevo = new Nodo(d,nom,tr);
-            frente = nuevo;
+        nuevo = new Nodo(d, nom, tr);
+        if (primero == null) {
+            primero = nuevo;
+            ultimo = nuevo;
         } else {
-            for (indice = frente; indice.enlace != null; indice = indice.enlace) {
-            }
-
-            Nodo nuevo;
-            nuevo = new Nodo(d,nom,tr);
-            indice.enlace = nuevo;
+            ultimo.siguiente = nuevo;
+            ultimo = nuevo;
         }
+
     }
-   
-    
-   public int quitar(){
-        int aux=frente.dpi;
-        frente=frente.enlace;
-        tama--;
+
+    public Object quitar() {
+        Object aux = null;
+        if (!colaVacia()) {
+            aux = primero.dpi;
+            primero = primero.siguiente;
+            if (primero == null) {
+                ultimo = null;
+            }
+        }
         return aux;
     }
-   
-   public int inicio(){
-       return frente.dpi;
-   }
+
+    public String toString() {
+        Nodo aux;
+        aux = primero;
+        String cadena;
+        cadena = "";
+        while(aux !=null){
+            cadena=cadena + aux.dpi+" , " +aux.nombre +  " , " +aux.transaccion+"\n";
+            aux = aux.siguiente;
+        }
+        return cadena;
+
+    }
+
 }

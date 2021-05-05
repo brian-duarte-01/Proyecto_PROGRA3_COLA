@@ -4,32 +4,23 @@ package modelo;
 
 public class Nodo {
    
-    int dpi;
+    String dpi;
     String nombre;
     String transaccion;
-    Nodo enlace;
+    Nodo siguiente;
 
-    public Nodo( int d, String nom, String tr, Nodo en ) {
-       
+    public Nodo(String d, String nom, String tr) {
         dpi=d;
         nombre=nom;
         transaccion=tr;
-        enlace=en;  
-    }
-    
-    public Nodo( int d, String nom, String tr ) {
-      
-        dpi=d;
-        nombre=nom;
-        transaccion=tr;
-        enlace=null;  
+        siguiente= null;
     }
 
-    public int getDpi() {
+    public String getDpi() {
         return dpi;
     }
 
-    public void setDpi(int dpi) {
+    public void setDpi(String dpi) {
         this.dpi = dpi;
     }
 
@@ -49,14 +40,14 @@ public class Nodo {
         this.transaccion = transaccion;
     }
 
-    public Nodo getEnlace() {
-        return enlace;
+    public Nodo getSiguiente() {
+        return siguiente;
     }
 
-    public void setEnlace(Nodo enlace) {
-        this.enlace = enlace;
+    public void setSiguiente(Nodo siguiente) {
+        this.siguiente = siguiente;
     }
-    
+
     
     
 }
