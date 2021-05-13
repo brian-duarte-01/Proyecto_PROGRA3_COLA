@@ -17,9 +17,9 @@ public class Cola {
 
     }
     //metodo para insertar al final de la cola 
-    public void insertar(int d, String nom, String tr) {
+    public void insertar(int n, int d, String nom,int e, String tr) {
         Nodo nuevo;
-        nuevo = new Nodo(d, nom, tr);
+        nuevo = new Nodo(n, d, nom,e, tr);
         if (primero == null) {
             primero = nuevo;
             ultimo = nuevo;
@@ -34,13 +34,14 @@ public class Cola {
     
     
     
-    public Cola InsertarAlInicio(int d, String nom,String  tr) 
+    public Cola InsertarAlInicio(int n,int d, String nom,int e,String  tr) 
     {
         Nodo nuevo;
-        nuevo = new Nodo(d,nom,tr);
+        nuevo = new Nodo(n,d,nom,e,tr);
         nuevo.siguiente = primero;
         primero = nuevo;
         return this;
+        
     }
     
     
@@ -65,11 +66,11 @@ public class Cola {
         String cadena;
         cadena="";
         while (aux != null) {
-            cadena = cadena+aux.dpi + " ,  " + aux.nombre + " ,  " + aux.transaccion + "\n";
+            cadena = cadena+aux.n1+",  "+aux.dpi + " ,  " + aux.nombre + " ,  "+ aux.edad+", "+ aux.transaccion + "\n";
             aux = aux.siguiente;
         }
         return cadena;
 
     }
-
+    
 }

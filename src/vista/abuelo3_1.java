@@ -14,7 +14,7 @@ import modelo.Cola;
  */
 public class abuelo3_1 extends javax.swing.JFrame {
     Cola c= new Cola();
-   
+   int n=1;
 
     public abuelo3_1() {
         initComponents();
@@ -299,6 +299,7 @@ public class abuelo3_1 extends javax.swing.JFrame {
         txttransaccion.setText("");
         txtdpi.setText("");
         txtnom.setText("");
+        txtedad.setText("");
     }//GEN-LAST:event_txtlimpiarActionPerformed
 
     private void btnenviaraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnenviaraActionPerformed
@@ -309,12 +310,15 @@ public class abuelo3_1 extends javax.swing.JFrame {
         nom=txtnom.getText();
         tr=txttransaccion.getText();
         if(e>=60){
-          c.InsertarAlInicio(d, nom, tr);
+          c.InsertarAlInicio(n,d, nom,e, tr);
             txtsalida.setText(c.mostrar());
+           
         }else{
-            c.insertar(d, nom, tr);
+            c.insertar(n,d, nom,e, tr);
             txtsalida.setText(c.mostrar());
+           
         }
+       n++;
 
     }//GEN-LAST:event_btnenviaraActionPerformed
 
