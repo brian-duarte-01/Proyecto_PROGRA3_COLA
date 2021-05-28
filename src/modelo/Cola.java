@@ -6,6 +6,7 @@ public class Cola {
     private Nodo primero;
     private Nodo ultimo;
     int tama;
+   
     //contructor de cola
     public Cola() {
         primero = null;
@@ -17,9 +18,9 @@ public class Cola {
 
     }
     //metodo para insertar al final de la cola 
-    public void insertar(int n, int d, String nom,int e, String tr) {
+    public void insertar(int n,int c, int d, String nom,int e, String tr) {
         Nodo nuevo;
-        nuevo = new Nodo(n, d, nom,e, tr);
+        nuevo = new Nodo(n,c, d, nom,e, tr);
         if (primero == null) {
             primero = nuevo;
             ultimo = nuevo;
@@ -34,10 +35,10 @@ public class Cola {
     
     
     
-    public Cola InsertarAlInicio(int n,int d, String nom,int e,String  tr) 
+    public Cola InsertarAlInicio(int n,int c,int d, String nom,int e,String  tr) 
     {
         Nodo nuevo;
-        nuevo = new Nodo(n,d,nom,e,tr);
+        nuevo = new Nodo(n,c,d,nom,e,tr);
         nuevo.siguiente = primero;
         primero = nuevo;
         return this;
@@ -56,6 +57,12 @@ public class Cola {
     }
     
     
+    // metodo para saber quien esta en el inicio de la cola
+    public String inicio(){
+      return "GM-"+primero.co+", "+primero.dpi+", "+primero.nombre+", "+primero.edad+", "+primero.transaccion;
+       
+    }
+    
     
     
     
@@ -66,11 +73,17 @@ public class Cola {
         String cadena;
         cadena="";
         while (aux != null) {
-            cadena = cadena+aux.n1+",  "+aux.dpi + " ,  " + aux.nombre + " ,  "+ aux.edad+", "+ aux.transaccion + "\n";
+               cadena = cadena+aux.n1+"        GM-"+aux.co+"      "+aux.dpi + "      " + aux.nombre + "       "+ aux.edad+"       "+ aux.transaccion + "\n";
             aux = aux.siguiente;
         }
         return cadena;
 
     }
+    
+   
+    
+    
+    
+    
     
 }

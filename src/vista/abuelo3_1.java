@@ -13,8 +13,9 @@ import modelo.Cola;
  * @author Samsung
  */
 public class abuelo3_1 extends javax.swing.JFrame {
-    Cola c= new Cola();
+    Cola co= new Cola();
    int n=1;
+   int c=1;
 
     public abuelo3_1() {
         initComponents();
@@ -30,6 +31,7 @@ public class abuelo3_1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtdpi = new javax.swing.JTextField();
@@ -42,16 +44,26 @@ public class abuelo3_1 extends javax.swing.JFrame {
         btnenviara = new javax.swing.JButton();
         txttransaccion = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        txtlimpiar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtsalida = new javax.swing.JTextArea();
         txtedad = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         txtquitar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        caja1 = new javax.swing.JTextArea();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        caja2 = new javax.swing.JTextArea();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        caja3 = new javax.swing.JTextArea();
+        btncaja1 = new javax.swing.JButton();
+        btncaja2 = new javax.swing.JButton();
+        btncaja3 = new javax.swing.JButton();
+        btnlimpiar1 = new javax.swing.JButton();
+        btnlimpiar2 = new javax.swing.JButton();
+        btnlimpiar3 = new javax.swing.JButton();
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -119,16 +131,8 @@ public class abuelo3_1 extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setText("Tipo de operacion:");
 
-        txtlimpiar.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtlimpiar.setText("Limpiar");
-        txtlimpiar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtlimpiarActionPerformed(evt);
-            }
-        });
-
         txtsalida.setColumns(20);
-        txtsalida.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        txtsalida.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         txtsalida.setRows(5);
         txtsalida.setToolTipText("");
         txtsalida.setWrapStyleWord(true);
@@ -141,15 +145,6 @@ public class abuelo3_1 extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel6.setText("Edad:");
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel7.setText("DPI");
-
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel8.setText("Nombre");
-
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel9.setText("tiempo");
-
         txtquitar.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         txtquitar.setText("Quitar");
         txtquitar.addActionListener(new java.awt.event.ActionListener() {
@@ -158,12 +153,70 @@ public class abuelo3_1 extends javax.swing.JFrame {
             }
         });
 
+        caja1.setColumns(20);
+        caja1.setRows(5);
+        jScrollPane2.setViewportView(caja1);
+
+        caja2.setColumns(20);
+        caja2.setRows(5);
+        jScrollPane3.setViewportView(caja2);
+
+        caja3.setColumns(20);
+        caja3.setRows(5);
+        jScrollPane4.setViewportView(caja3);
+
+        btncaja1.setText("Caja1");
+        btncaja1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncaja1ActionPerformed(evt);
+            }
+        });
+
+        btncaja2.setText("Caja 2");
+        btncaja2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncaja2ActionPerformed(evt);
+            }
+        });
+
+        btncaja3.setText("Caja 3");
+        btncaja3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncaja3ActionPerformed(evt);
+            }
+        });
+
+        btnlimpiar1.setText("Limpiar");
+        btnlimpiar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlimpiar1ActionPerformed(evt);
+            }
+        });
+
+        btnlimpiar2.setText("Limpiar");
+        btnlimpiar2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlimpiar2ActionPerformed(evt);
+            }
+        });
+
+        btnlimpiar3.setText("Limpiar");
+        btnlimpiar3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnlimpiar3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(201, 201, 201)
+                .addComponent(btnenviara, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(454, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -181,46 +234,45 @@ public class abuelo3_1 extends javax.swing.JFrame {
                                         .addGap(42, 42, 42)
                                         .addComponent(jLabel6))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
+                                        .addGap(21, 21, 21)
                                         .addComponent(txtnom, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(33, 33, 33)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(txtedad, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(41, 41, 41)
                                         .addComponent(txttransaccion, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(27, 27, 27)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel9)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(txtcheque, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(34, 34, 34)
-                                                .addComponent(txtdeposito, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(27, 27, 27)
-                                        .addComponent(txtlimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGap(30, 30, 30)
+                                        .addComponent(txtcheque, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(39, 39, 39)
+                                        .addComponent(txtdeposito, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(63, 63, 63)
                                 .addComponent(jLabel1))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(144, 144, 144))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(174, 174, 174)
-                                .addComponent(jLabel7)
-                                .addGap(97, 97, 97)
-                                .addComponent(jLabel8))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(33, 33, 33)
+                                .addComponent(txtquitar)
+                                .addGap(367, 367, 367))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(201, 201, 201)
-                        .addComponent(btnenviara, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(131, 131, 131)
-                        .addComponent(jLabel5)))
-                .addGap(68, 82, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(168, 168, 168)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 363, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
+                            .addComponent(jScrollPane3)
+                            .addComponent(jScrollPane4))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(txtquitar)
-                .addGap(72, 72, 72))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btncaja1)
+                    .addComponent(btncaja2)
+                    .addComponent(btncaja3)
+                    .addComponent(btnlimpiar1)
+                    .addComponent(btnlimpiar2)
+                    .addComponent(btnlimpiar3))
+                .addGap(60, 60, 60))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,7 +284,7 @@ public class abuelo3_1 extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
                     .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtdpi, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtnom, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -244,28 +296,43 @@ public class abuelo3_1 extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtahorro, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtcheque, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtdeposito, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtlimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtdeposito, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnenviara)
-                .addGap(28, 28, 28)
-                .addComponent(jLabel5)
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(txtquitar))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txtquitar)
-                        .addGap(117, 117, 117)))
-                .addComponent(jButton4)
-                .addContainerGap())
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(jButton4)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btncaja1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnlimpiar1)))
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btncaja2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnlimpiar2)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btncaja3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnlimpiar3)))
+                        .addGap(48, 48, 48))))
         );
 
         pack();
@@ -295,13 +362,6 @@ public class abuelo3_1 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtahorroActionPerformed
 
-    private void txtlimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtlimpiarActionPerformed
-        txttransaccion.setText("");
-        txtdpi.setText("");
-        txtnom.setText("");
-        txtedad.setText("");
-    }//GEN-LAST:event_txtlimpiarActionPerformed
-
     private void btnenviaraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnenviaraActionPerformed
         int d,e;
         String nom,tr;
@@ -310,15 +370,25 @@ public class abuelo3_1 extends javax.swing.JFrame {
         nom=txtnom.getText();
         tr=txttransaccion.getText();
         if(e>=60){
-          c.InsertarAlInicio(n,d, nom,e, tr);
-            txtsalida.setText(c.mostrar());
+          co.InsertarAlInicio(n,c,d, nom,e, tr);
+            txtsalida.setText(co.mostrar());
+            
            
         }else{
-            c.insertar(n,d, nom,e, tr);
-            txtsalida.setText(c.mostrar());
+            co.insertar(n,c,d, nom,e, tr);
+            txtsalida.setText(co.mostrar());
            
         }
+        
+         txttransaccion.setText("");
+        txtdpi.setText("");
+        txtnom.setText("");
+        txtedad.setText("");
+        
+        
+       
        n++;
+       c++;
 
     }//GEN-LAST:event_btnenviaraActionPerformed
 
@@ -331,11 +401,11 @@ public class abuelo3_1 extends javax.swing.JFrame {
     }//GEN-LAST:event_txtnomActionPerformed
 
     private void txtquitarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtquitarActionPerformed
-     if(!c.colaVacia()){
+     if(!co.colaVacia()){
                       int d;
-                     d= c.quitar();
-                     txtdpi.setText(String.valueOf(d));
-                     txtsalida.setText(c.mostrar());
+                     d= co.quitar();
+                     txtdpi.setText(String.valueOf(d));          
+                     txtsalida.setText(co.mostrar());
                      
                      
                      }else{
@@ -343,6 +413,44 @@ public class abuelo3_1 extends javax.swing.JFrame {
                      }
       
     }//GEN-LAST:event_txtquitarActionPerformed
+
+    private void btncaja1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncaja1ActionPerformed
+        if(!co.colaVacia()){
+        caja1.setText(co.inicio());
+        }else{
+             JOptionPane.showMessageDialog(null, "la cola esta vacia");
+       }
+       
+    }//GEN-LAST:event_btncaja1ActionPerformed
+
+    private void btnlimpiar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlimpiar1ActionPerformed
+        caja1.setText("");
+       
+    }//GEN-LAST:event_btnlimpiar1ActionPerformed
+
+    private void btncaja2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncaja2ActionPerformed
+       if(!co.colaVacia()){
+           caja2.setText(co.inicio());
+       }else{
+             JOptionPane.showMessageDialog(null, "la cola esta vacia");
+       }
+    }//GEN-LAST:event_btncaja2ActionPerformed
+
+    private void btnlimpiar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlimpiar2ActionPerformed
+        caja2.setText("");
+    }//GEN-LAST:event_btnlimpiar2ActionPerformed
+
+    private void btncaja3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncaja3ActionPerformed
+        if(!co.colaVacia()){
+            caja3.setText(co.inicio());
+        }else{
+             JOptionPane.showMessageDialog(null, "la cola esta vacia");
+       }
+    }//GEN-LAST:event_btncaja3ActionPerformed
+
+    private void btnlimpiar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlimpiar3ActionPerformed
+       caja3.setText("");
+    }//GEN-LAST:event_btnlimpiar3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -383,7 +491,17 @@ public class abuelo3_1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btncaja1;
+    private javax.swing.JButton btncaja2;
+    private javax.swing.JButton btncaja3;
     public javax.swing.JButton btnenviara;
+    private javax.swing.JButton btnlimpiar1;
+    private javax.swing.JButton btnlimpiar2;
+    private javax.swing.JButton btnlimpiar3;
+    private javax.swing.JTextArea caja1;
+    private javax.swing.JTextArea caja2;
+    private javax.swing.JTextArea caja3;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -391,16 +509,15 @@ public class abuelo3_1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     public javax.swing.JButton txtahorro;
     public javax.swing.JButton txtcheque;
     public javax.swing.JButton txtdeposito;
     public javax.swing.JTextField txtdpi;
     private javax.swing.JTextField txtedad;
-    public javax.swing.JButton txtlimpiar;
     public javax.swing.JTextField txtnom;
     private javax.swing.JButton txtquitar;
     public javax.swing.JTextArea txtsalida;
